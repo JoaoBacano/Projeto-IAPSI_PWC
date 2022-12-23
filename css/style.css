@@ -1,33 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
 * {
 	font-family: 'Montserrat', sans-serif;
 }
+
 body {
 	background: #f1fbff;
 }
+
 .section-padding {
 	padding: 100px 0;
 }
+
 .carousel-item {
 	height: 100vh;
 	min-height: 300px;
 }
+
 .carousel-caption {
 	bottom: 220px;
 	z-index: 2;
 }
+
 .carousel-caption h5 {
 	font-size: 45px;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	margin-top: 25px;
 }
+
 .carousel-caption p {
 	width: 60%;
 	margin: auto;
 	font-size: 18px;
 	line-height: 1.9;
 }
+
 .carousel-inner:before {
 	content: '';
 	position: absolute;
@@ -38,6 +46,7 @@ body {
 	background: rgba(0, 0, 0, 0.7);
 	z-index: 1;
 }
+
 .navbar .getstarted {
 	background: #106eea;
 	margin-left: 30px;
@@ -48,11 +57,13 @@ body {
 	padding: .5rem 1rem;
 	line-height: 2.3;
 }
+
 .navbar-nav a {
 	font-size: 15px;
 	text-transform: uppercase;
 	font-weight: 500;
 }
+
 .navbar-light .navbar-brand {
 	color: #000;
 	font-size: 25px;
@@ -60,72 +71,347 @@ body {
 	font-weight: bold;
 	letter-spacing: 2px;
 }
-.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+
+.navbar-light .navbar-brand:focus,
+.navbar-light .navbar-brand:hover {
 	color: #000;
 }
+
 .navbar-light .navbar-nav .nav-link {
 	color: #000;
 }
-.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
 	color: #000;
 }
+
 .w-100 {
 	height: 100vh;
 }
+
 .navbar-toggler {
 	padding: 1px 5px;
 	font-size: 18px;
 	line-height: 0.3;
 	background: #fff;
 }
+
 .portfolio .card {
 	box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.15);
 }
+
 .team .card {
 	box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.15);
 }
+
 .services .card-body i {
 	font-size: 50px;
 }
+
 .team .card-body i {
 	font-size: 20px;
 }
+
+/* Adicionado */
+.circle {
+	position: absolute;
+	z-index: 1;
+	display: block;
+	text-align: center;
+	font-size: 35px;
+	font-weight: bold;
+	color: #000;
+
+}
+
+.img-fluid {
+	float: right;
+	width: 45%;
+	display: flex;
+	align-items: center;
+}
+
+.centered {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.circle-temperatura {
+	margin-left: 500px;
+	margin-top: 200px;
+
+}
+
+.circle-temperatura .img-fluid {
+	width: 240px;
+	height: 240px;
+}
+
+.circle-humidade {
+	right: 750px;
+	margin-top: 200px;
+	font-size: 33px;
+}
+
+.circle-humidade .img-fluid {
+	width: 180px;
+	height: 180px;
+}
+
+.circle-humidade .centered {
+	top: 75%;
+	left: 50%;
+}
+
+/* ---------------Forecast------------ */
+.forecast-body {
+	margin-top: 86px;
+	min-height: 85vh;
+	/* background-color: rgba(238, 237, 237, 0.438); */
+	color: rgb(105, 104, 104);
+	font-family: sans-serif;
+}
+
+.card {
+	padding: 1.2rem 3rem 1rem 3rem;
+	margin: 1rem;
+	border-radius: 1.5rem;
+	border-color: rgba(238, 237, 237, 0.438);
+	box-shadow: 5px 8px 10px #72727233;
+}
+
+@media(max-width:767px) {
+	.card {
+		height: 10rem;
+		padding: 1.5rem 1.5rem 1rem 1.5rem;
+	}
+}
+
+.carousel-indicators li {
+	width: 5px;
+	height: 6px;
+	border-radius: 100%;
+	opacity: 0.2;
+	background-color: #000000;
+}
+
+.carousel-indicators {
+	margin-bottom: 0;
+}
+
+.temp {
+	font-size: 5rem;
+	color: rgb(57, 57, 58);
+}
+
+.card-1 {
+	background: linear-gradient(to right, #ffffff 50%, rgba(241, 224, 190, 0.507));
+}
+
+@media(max-width:767px) {
+	.temp {
+		font-size: 3rem;
+	}
+}
+
+.location {
+	margin-bottom: 1.5rem;
+}
+
+@media(max-width:767px) {
+	.location {
+		font-size: 0.75rem;
+	}
+}
+
+.row2 .img-fluid {
+	margin: 10% 0;
+	opacity: 0.5;
+	width: 40%;
+
+}
+
+.card-2 .row {
+	justify-content: center;
+}
+
+.card-3 .row {
+	justify-content: center;
+}
+
+.row1 {
+	font-size: 0.7rem;
+	font-weight: bold;
+	color: black;
+}
+
+.row3 {
+	font-size: 0.9rem;
+	font-weight: bold;
+	color: black;
+}
+
+@media(max-width:400px) {
+	.row3 {
+		font-size: 0.7rem;
+		font-weight: bold;
+		color: black;
+	}
+}
+
+@media(max-width:320px) {
+	.row3 {
+		font-size: 0.6rem;
+		font-weight: bold;
+		color: black;
+	}
+}
+
+.row4 {
+	font-size: 0.6rem;
+	color: rgb(196, 196, 196);
+	margin: 5% 0 2.5rem;
+}
+
+.card-3 .row3 {
+	margin: 5% 0 2.5rem;
+}
+
+.col {
+	overflow: visible;
+}
+
+.row {
+	overflow: visible;
+}
+
+/* End forecast */
+/* ---------------About------------ */
+.about-body {
+	margin-top: 86px;
+	min-height: 85vh;
+	/* background-color: rgba(238, 237, 237, 0.438); */
+	color: rgb(105, 104, 104);
+	font-family: sans-serif;
+}
+
+.about-body .card {
+	
+	margin: 1rem;
+	border-radius: 1.5rem;
+	border-color: rgba(238, 237, 237, 0.438);
+	box-shadow: 5px 8px 10px #72727233;
+}
+
+.about-body .card-1 {
+	background: linear-gradient(to right, #ffffff 50%, rgba(255, 255, 255, 0.507));
+}
+
+.about-body .card-2 {
+	padding: 1.2rem 3rem 1rem 3rem;
+	
+	margin: 1rem;
+	border-radius: 1.5rem;
+	border-color: rgba(238, 237, 237, 0.438);
+	box-shadow: 5px 8px 10px #72727233;
+	background: #fff;
+}
+.card-2 .title{
+	padding: 12px 0px;
+	font-size: 30px;
+}
+.about-container {
+	display: flex;
+	flex-wrap: wrap;
+}
+.list-item {
+	margin-right: 6px;
+	padding: 10px 16px;
+	box-sizing: border-box;
+	color: #2b2b2b !important;
+	display: block;
+	text-decoration: none;
+	align-items: center;
+	display: flex !important;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+}
+
+.icon {
+	display: inline-block;
+	height: auto;
+	width: 48px;
+}
+
+.label{
+	padding: 0 10px;
+	flex-grow: 1;
+	font-size: 20px;
+	font-weight: 400;
+	min-width: 40%;
+	
+}
+
+.data{
+	text-align: right;
+	color: #2b2b2b;
+	font-size: 24px;
+}
+.direita{
+	float: right; 
+}
+
+
+/* End about */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 	.carousel-caption {
 		bottom: 370px;
 	}
+
 	.carousel-caption p {
 		width: 100%;
 	}
+
 	.card {
 		margin-bottom: 30px;
 	}
+
 	.img-area img {
 		width: 100%;
 	}
 }
+
 @media only screen and (max-width: 767px) {
 	.navbar-nav {
 		text-align: center;
 	}
+
 	.carousel-caption {
 		bottom: 125px;
 	}
+
 	.carousel-caption h5 {
 		font-size: 17px;
 	}
+
 	.carousel-caption a {
 		padding: 10px 15px;
 		font-size: 15px;
 	}
+
 	.carousel-caption p {
 		width: 100%;
 		line-height: 1.6;
 		font-size: 12px;
 	}
+
 	.about-text {
 		padding-top: 50px;
 	}
+
 	.card {
 		margin-bottom: 30px;
 	}
