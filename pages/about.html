@@ -24,6 +24,16 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="form">
+                <a  id="search" >
+                <i class="bi bi-search" aria-hidden="true"></i>
+                </a>
+                <input
+                type="text"
+                placeholder="Digite o nome da cidade"
+                id="city-input"
+              />
+            </div> 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -37,7 +47,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../pages/favorites.html">Favoritos</a>
-                    </li>
+                    </li>   
 
                 </ul>
             </div>
@@ -51,8 +61,8 @@
         <div class="card card-1">
             <div class="row">
                 <div class="col-6">
-                    <div class="temp">23&deg;</div>
-                    <div class="location">Coimbra, Portugal</div>
+                    <div  class="temp"><span id="temperature"></span>ºC</div>
+                    <div class="location"><span id="city"></span>, <span id="country"> </span></div>
                 </div>
                 <div class="col-6 justify-content-right">
                     <img class="img-fluid" src="https://img.icons8.com/ios/100/000000/sun.png">
@@ -62,59 +72,127 @@
 
         <div class="card-2">
             <div class="title">Meteorologia para hoje para Pombaline downtown, 11</div>
-            
-            <!-- <div class="about-container">
-                <div class="list-item">
-                    <div class="icon">
-                        
-                    </div>
-                    <div class="label">
-                        Alto/Baixo
-                    </div>
-                    <div class="data">
-                        23/14º
+
+            <div class="about-container" >
+                <div class="esquerda">
+                    <div class="list-item">
+                        <div class="icon">
+
+                        </div>
+                        <div class="label">
+                            Alto/Baixo
+                        </div>
+                        <div class="data">
+                            <span id="high"></span>/<span id="low"></span>ºC
+                        </div>
+
                     </div>
 
+                    <div class="list-item">
+                        <div class="icon">
+
+                        </div>
+                        <div class="label">
+                            Humidade
+                        </div>
+                        <div class="data">
+                            <span id="humidity"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="list-item">
+                        <div class="icon">
+
+                        </div>
+                        <div class="label">
+                            Pressão
+                        </div>
+                        <div class="data">
+                            <span id="pressure"></span>
+                        </div>
+
+                    </div>
+                    <div class="list-item">
+                        <div class="icon">
+
+                        </div>
+                        <div class="label">
+                            Visibilidade
+                        </div>
+                        <div class="data">
+                            <span id="visibility"></span>
+                        </div>
+
+                    </div>
                 </div>
-            
-           
-                <div class="list-item">
-                    <div class="icon">
-                        
-                    </div>
-                    <div class="label">
-                        Humidade
-                    </div>
-                    <div class="data">
-                        54%
+
+                <div class="direita">
+                    <div class="list-item">
+                        <div class="icon">
+
+                        </div>
+                        <div class="label">
+                            Vento
+                        </div>
+                        <div class="data">
+                            <span id="wind"></span>
+                        </div>
+
                     </div>
 
+                    <div class="list-item">
+                        <div class="icon">
+
+                        </div>
+                        <div class="label">
+                            Humidade
+                        </div>
+                        <div class="data">
+                            54%
+                        </div>
+
+                    </div>
+
+                    <div class="list-item">
+                        <div class="icon">
+
+                        </div>
+                        <div class="label">
+                            Índice de UV
+                        </div>
+                        <div class="data">
+                            <span id="uv"></span>de 10
+                        </div>
+
+                    </div>
+                    <div class="list-item">
+                        <div class="icon">
+
+                        </div>
+                        <div class="label">
+                            Fase da lua
+                        </div>
+                        <div class="data">
+                            <span id="moon"></span>
+                        </div>
+
+                    </div>
                 </div>
-           
-           
-                <div class="">
-                    <div class="icon">
-                        
-                    </div>
-                    <div class="label">
-                        Alto/Baixo
-                    </div>
-                    <div class="data">
 
-                    </div>
-
-                </div>
-            </div> -->
-            <ul class="list-group list-group-flush about-container">
+            </div>
+            <!-- <ul class="list-group list-group-flush about-container">
+                <div class="esquerda"> <li class="list-group-item list-item"><div class="icon"></div><div class="label">Alto/Baixo</div><div class="data">24ºC</div></li>
                 <li class="list-group-item list-item"><div class="icon"></div><div class="label">Alto/Baixo</div><div class="data">24ºC</div></li>
                 <li class="list-group-item list-item"><div class="icon"></div><div class="label">Alto/Baixo</div><div class="data">24ºC</div></li>
-                <li class="list-group-item list-item"><div class="icon"></div><div class="label">Alto/Baixo</div><div class="data">24ºC</div></li>
-                <li class="list-group-item list-item"><div class="icon"></div><div class="label">Alto/Baixo</div><div class="data">24ºC</div></li>
-                <li class="list-group-item list-item direita"><div class="icon"></div><div class="label">Alto/Baixo</div><div class="data">24ºC</div></li>
-                <li class="list-group-item list-item direita"><div class="icon"></div><div class="label">Alto/Baixo</div><div class="data">24ºC</div></li>
-                <li class="list-group-item list-item direita"><div class="icon"></div><div class="label">Alto/Baixo</div><div class="data">24ºC</div></li>
-                <li class="list-group-item list-item direita"><div class="icon"></div><div class="label">Alto/Baixo</div><div class="data">24ºC</div></li>
-              </ul>
+                <li class="list-group-item list-item"><div class="icon"></div><div class="label">Alto/Baixo</div><div class="data">24ºC</div></li></div>
+               
+                <div class="direita"> <li class="list-group-item list-item "><div class="icon"></div><div class="label">Alto/Baixo</div><div class="data">24ºC</div></li>
+                <li class="list-group-item list-item "><div class="icon"></div><div class="label">Alto/Baixo</div><div class="data">24ºC</div></li>
+                <li class="list-group-item list-item "><div class="icon"></div><div class="label">Alto/Baixo</div><div class="data">24ºC</div></li>
+                <li class="list-group-item list-item "><div class="icon"></div><div class="label">Alto/Baixo</div><div class="data">24ºC</div></li></div>
+               
+              </ul> -->
         </div>
     </div>
     <!-- about section Ends -->
