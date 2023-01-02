@@ -1,4 +1,4 @@
-const apiKey = "e5ce83158746fe24c83144f9e04b70f7";
+//const apiKey = "e5ce83158746fe24c83144f9e04b70f7";
 
 const cityInput = document.querySelector("#city-input");
 const searchBtn = document.querySelector("#search");
@@ -36,7 +36,7 @@ const getWeatherData = async (city) => {
 
 const showWeatherData = async (city) => {
   
-  city = localStorage.info;
+  city = localStorage.getItem("city");
   console.log(city);
   const data = await getWeatherData(city);
 
@@ -55,7 +55,7 @@ searchBtn.addEventListener("click", (e) => {
   e.preventDefault();
   
   const city = cityInput.value;
-  localStorage.info = city;
+  localStorage.getItem("city", city);
   
   showWeatherData(city);
 

@@ -369,58 +369,10 @@ body {
 .esquerda{
 	margin-left: 6px;
 }
-/*-------------------------*/
-.box{
-
-	width: 500px;
-
-	height: 50px;
-
-	background-color: white;
-
-	border-radius: 30px;
-
-	display: flex;
-
-	align-items: center;
-
-	padding: 20px;
-
-}
-.box > button {
-	padding: 0.8rem;
-	min-width: 50px;
-	margin-left: 8px;
-	background-color: #8dd0f5;
-	color: #fff;
-	border: none;
-	cursor: pointer;
-	border-radius: 4px;
-}
-.box > i {
-
-	font-size: 20px;
-
-	color: #777;
-
-}
-
-.box > input{
-
-	flex: 1;
-
+.icon .img-fluid{
+	width: 40px;
 	height: 40px;
-
-	border: none;
-
-	outline: none;
-
-	font-size: 18px;
-
-	padding-left: 10px;
-
 }
-
 
 /* End about */
 /* Form */
