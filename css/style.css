@@ -363,7 +363,7 @@ body {
 }
 .direita{
 	
-	margin-right: 6px;
+	float: right;
 	
 }
 .esquerda{
