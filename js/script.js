@@ -45,7 +45,7 @@ const getWeatherForecast = async (city) => {
 
   console.log(data);
   return data;
-
+  
 }
 
 const showWeatherData = async (city) => {
@@ -66,18 +66,13 @@ const showWeatherData = async (city) => {
 searchBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
-  localStorage.clear();
-  const city = cityInput.value;
+  
   const link = window.location.href;
-  localStorage.city = city;
   localStorage.setItem('city', cityInput.value);
-
 
   if (link.includes("index.html")) {
     window.location.replace("pages/about.html");
   }
-
-  showWeatherData(city);
 
 });
 
@@ -93,17 +88,19 @@ const showWeatherDataIndex = async (city) => {
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  var city = localStorage.getItem("city");
   const link = window.location.href;
 
   if (link.includes("index.html")) {
     showWeatherDataIndex(`Dubai`);
   } else if (link.includes("about.html")) {
-    var city = localStorage.getItem("city");
+    
     console.log(city);
     showWeatherData(city);
-  }else if(link.includes("forecast.html"))
-  {
-    showWeatherDataForeCast("Dubai");
+  } else if (link.includes("forecast.html")) {
+    //showWeatherDataForeCast(city);
+    getinfo(city);
+    
   }
 
 });
@@ -136,9 +133,33 @@ const showWeatherDataForeCast = async (city) => {
 
   const data = await getWeatherForecast(city);
 
-  tempElement.innerText = parseInt(data.list.main.temp);
-  highElement.innerText = parseInt(data.list.main.temp_max);
-  lowElement.innerText = parseInt(data.list.main.temp_min);
-
+  //tempElement.innerText = parseInt(data.list.main.temp);
+  
 };
 
+function getinfo(city){
+  
+  fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`)
+.then(response => response.json())
+.then(data => {
+
+    //Getting the min and max values for each day
+    for(i = 0; i<5; i++){
+        document.getElementById("dia" + (i+1) + "min").innerHTML = "Min: " + parseInt(data.list[i].main.temp_min - 273.15) + "°";
+        //Number(1.3450001).toFixed(2); // 1.35
+    }
+
+    for(i = 0; i<5; i++){
+        document.getElementById("dia" + (i+1) + "max").innerHTML = "Max: " + Number(data.list[i].main.temp_max - 273.15).toFixed(2) + "°";
+    }
+    //------------------------------------------------------------
+
+    
+    //------------------------------------------------------------
+    console.log(data)
+
+
+})
+
+.catch(err => alert("Something Went Wrong: Try Checking Your Internet Coneciton"))
+}

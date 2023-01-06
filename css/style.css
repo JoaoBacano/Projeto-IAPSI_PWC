@@ -277,7 +277,7 @@ body {
 }
 
 .card-3 .row3 {
-	margin: 5% 0 2.5rem;
+	margin: 1% 0 0.5rem;
 }
 
 .col {
@@ -287,6 +287,18 @@ body {
 .row {
 	overflow: visible;
 }
+
+.maxvalue{
+	font-size: 0.9rem;
+	font-weight: bold;
+	color: black;
+}
+.minvalue{
+	font-size: 0.7rem;
+	font-weight: bold;
+	color: black;
+}
+
 
 /* End forecast */
 /* ---------------About------------ */
