@@ -22,6 +22,10 @@ const visibilityElement = document.querySelector("#visibility");
 const uvElement = document.querySelector("#uv");
 const moonElement = document.querySelector("#moon");
 
+const btnFavorites = document.querySelector("#btnfavorites");
+const imgFavorites = document.querySelector("#imgfavorites");
+
+var adicionarcard = document.querySelector(".row");
 
 console.log(localStorage.getItem("city"));
 
@@ -45,7 +49,7 @@ const getWeatherForecast = async (city) => {
 
   console.log(data);
   return data;
-  
+
 }
 
 const showWeatherData = async (city) => {
@@ -66,7 +70,7 @@ const showWeatherData = async (city) => {
 searchBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
-  
+
   const link = window.location.href;
   localStorage.setItem('city', cityInput.value);
 
@@ -80,29 +84,46 @@ const showWeatherDataIndex = async (city) => {
 
   const data = await getWeatherData(city);
 
-  tempElement.innerText = parseInt(data.main.temp);
+  tempElement.innerText = `${parseInt(data.main.temp)}ºC`;
   humidityElement.innerText = `${data.main.humidity}%`;
-  //windElement.innerText = `${data.wind.speed}km/h`;
+  windElement.innerText = `${data.wind.speed}km/h`;
 
 };
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  var city = localStorage.getItem("city");
+
+  var favorites = localStorage.getItem("favorites");
+  
+  
   const link = window.location.href;
 
   if (link.includes("index.html")) {
     showWeatherDataIndex(`Dubai`);
   } else if (link.includes("about.html")) {
-    
+    var city = localStorage.getItem("city");
+    var nome = cityElement.innerHTML;
+    var favorites = localStorage.getItem("favorites");
     console.log(city);
     showWeatherData(city);
   } else if (link.includes("forecast.html")) {
-    //showWeatherDataForeCast(city);
-    getinfo(city);
+    //showWeatherDataForeCast(city);´
     
+    var city = localStorage.getItem("city");
+    var nome = cityElement.innerHTML;
+    getinfo(city);
+
+  } else if (link.includes("favorites.html")) {
+    
+    cardfavorito(favorites);
   }
 
+  if (favorites.includes(nome)) {
+    
+    imgFavorites.src = '../icons/starfavorites.png';
+  } else {
+    imgFavorites.src = '../icons/starnofavorites.png';
+  }
 });
 
 if (myCarousel != null) {
@@ -129,37 +150,63 @@ if (myCarousel != null) {
   });
 }
 
-const showWeatherDataForeCast = async (city) => {
+function getinfo(city) {
 
-  const data = await getWeatherForecast(city);
-
-  //tempElement.innerText = parseInt(data.list.main.temp);
-  
-};
-
-function getinfo(city){
-  
   fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`)
-.then(response => response.json())
-.then(data => {
+    .then(response => response.json())
+    .then(data => {
 
-    //Getting the min and max values for each day
-    for(i = 0; i<5; i++){
-        document.getElementById("dia" + (i+1) + "min").innerHTML = "Min: " + parseInt(data.list[i].main.temp_min - 273.15) + "°";
+      //Getting the min and max values for each day
+      for (i = 0; i < 5; i++) {
+        document.getElementById("dia" + (i + 1) + "min").innerHTML = "Min: " + parseInt(data.list[i].main.temp_min - 273.15) + "°";
         //Number(1.3450001).toFixed(2); // 1.35
-    }
+      }
 
-    for(i = 0; i<5; i++){
-        document.getElementById("dia" + (i+1) + "max").innerHTML = "Max: " + Number(data.list[i].main.temp_max - 273.15).toFixed(2) + "°";
-    }
-    //------------------------------------------------------------
+      for (i = 0; i < 5; i++) {
+        document.getElementById("dia" + (i + 1) + "max").innerHTML = "Max: " + Number(data.list[i].main.temp_max - 273.15).toFixed(2) + "°";
+      }
+      //------------------------------------------------------------
 
+
+      //------------------------------------------------------------
+      console.log(data)
+
+
+    });
+
+}
+if(btnFavorites != null){
+
+  btnFavorites.addEventListener('click', () => {
+  var favorites = localStorage.getItem("favorites");
+  var nome = cityElement.innerHTML;
+  console.log(nome);
+  if (!favorites) {
+    localStorage.setItem("favorites", JSON.stringify({ stores: [] }));
+    favorites = JSON.parse(localStorage.getItem("favorites"));
+  } else {
+    favorites = JSON.parse(favorites);
+  }
+
+  if (imgFavorites.src == '../icons/starfavorites.png') {
     
-    //------------------------------------------------------------
-    console.log(data)
+    favorites.stores.pop(nome);
+    imgFavorites.src = '../icons/starnofavorites.png';
+  } else {
+    favorites.stores.push(nome);
+    imgFavorites.src = '../icons/starfavorites.png';
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  }
+  
+  
+
+});
+}
 
 
-})
-
-.catch(err => alert("Something Went Wrong: Try Checking Your Internet Coneciton"))
+function cardfavorito(favorites){
+  for (let index = 0; index < 3; index++) {
+    row.innerHTML = '<div class="col"> <div class="card"><img src="..." class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">Card title</h5> <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p></div></div> </div>';
+    
+  }
 }

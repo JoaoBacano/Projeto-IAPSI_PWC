@@ -151,7 +151,7 @@ body {
 }
 
 .circle-humidade {
-	right: 750px;
+	left: 950px;
 	margin-top: 200px;
 	font-size: 33px;
 }
@@ -164,6 +164,27 @@ body {
 .circle-humidade .centered {
 	top: 75%;
 	left: 50%;
+}
+
+.circle-vento {
+	left: 350px;
+	margin-top: 400px;
+	font-size: 33px;
+}
+
+.circle-vento .img-fluid {
+	width: 240px;
+	height: 240px;
+}
+.circle-vento .centered {
+	top: 50%;
+	left: 60%;
+}
+
+.btn{
+	border:none;
+	background: transparent;
+	outline: none;
 }
 
 /* ---------------Forecast------------ */
@@ -387,6 +408,23 @@ body {
 }
 
 /* End about */
+/*Favorits*/
+.favorits-body{
+	margin-top: 86px;
+	min-height: 85vh;
+	/* background-color: rgba(238, 237, 237, 0.438); */
+	color: rgb(105, 104, 104);
+	font-family: sans-serif;
+}
+
+.favorits-body .card {
+	
+	padding: 1.2rem 1rem 1rem 1rem;
+	border-color: rgba(238, 237, 237, 0.438);
+	box-shadow: 5px 8px 10px #72727233;
+}
+
+/*End Favorits*/
 /* Form */
 .form h3 {
 	margin-bottom: 1rem;
