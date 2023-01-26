@@ -181,11 +181,7 @@ body {
 	left: 60%;
 }
 
-.btn{
-	border:none;
-	background: transparent;
-	outline: none;
-}
+
 
 /* ---------------Forecast------------ */
 .forecast-body {
@@ -228,9 +224,7 @@ body {
 	color: rgb(57, 57, 58);
 }
 
-.card-1 {
-	background: linear-gradient(to right, #ffffff 50%, rgba(241, 224, 190, 0.507));
-}
+
 
 @media(max-width:767px) {
 	.temp {
@@ -239,7 +233,7 @@ body {
 }
 
 .location {
-	margin-bottom: 1.5rem;
+	margin-bottom: 0.5rem;
 }
 
 @media(max-width:767px) {
@@ -319,7 +313,14 @@ body {
 	font-weight: bold;
 	color: black;
 }
-
+.icon-weather{
+	width: 120px;
+	height: 100px;
+}
+.icon-weather-hora{
+	width: 75px;
+	height: 60px;
+}
 
 /* End forecast */
 /* ---------------About------------ */
@@ -407,6 +408,20 @@ body {
 	height: 40px;
 }
 
+.btnaddfavorites{
+	
+	width: 75px;
+	height: 50px;
+	position: static;
+	margin-right: 50px;
+	margin-top: 10px;
+}
+.btnaddfavorites .img-fluid{
+	width: 75px;
+	height: 50px;
+	
+	
+}
 /* End about */
 /*Favorits*/
 .favorits-body{

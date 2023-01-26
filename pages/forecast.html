@@ -24,13 +24,13 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="form">
-                <a href="pages/about.html" id="search">
-                    <i class="bi bi-search" aria-hidden="true"></i>
-                </a>
-                <input type="text" placeholder="Digite o nome da cidade" id="city-input" />
-
-            </div>
+            <form class="d-flex">
+                <input class="form-control me-2" type="text" placeholder="Digite o nome da cidade" id="city-input">
+                
+                <button class="btn btn-outline-success bi bi-search" type="submit" id="search"><a href="pages/about.html" >
+                    
+                </a></button>
+              </form>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -57,12 +57,15 @@
         <div class="card card-1">
             <div class="row">
                 <div class="col-6">
-                    <div class="temp"><span id="temperature"></span></div>
-                    <div class="location">Coimbra, Portugal</div>
+                    <div  class="temp"><span id="temperature"></span>ºC</div>
+                    <div class="location"><span id="city"></span>, <span id="country"> </span></div>
+                    <div class="location"><span id="data"></span></div>
                 </div>
                 <div class="col-6 justify-content-right">
-                    <img class="img-fluid" src="https://img.icons8.com/ios/100/000000/sun.png">
+                    
+                    <img class="img-fluid" id="icon" src="">
                 </div>
+                <button id="btnfavorites" class="btn btnaddfavorites"><img src="" id="imgfavorites"alt="" class="img-fluid"> </button>
             </div>
         </div>
         <div class="card card-3">
@@ -71,46 +74,44 @@
 
             <div class="row">
                 <div class="col">
-                    <div class="row row1 diatemp1">&deg;</div>
-                    <div class="row row2"><img class="img-fluid" src="https://img.icons8.com/ios/100/000000/sun.png" />
+                    <div class="row row1" id="dia1data"></div>
+                    <div class="row row2">
+                        <img src="" alt="" id="dia1icon" class="icon-weather">
                     </div>
-                    <div class="row row3" id="dia1"></div>
+                    <div class="row row3" id="dia1name"></div>
                     <div class="row maxvalue" id="dia1max"></div>
                     <div class="row minvalue" id="dia1min"></div>
                 </div>
                 <div class="col">
-                    <div class="row row1 diatemp2">&deg;</div>
-                    <div class="row row2"><img class="img-fluid" src="https://img.icons8.com/ios/100/000000/sun.png" />
+                    <div class="row row1" id="dia2data"></div>
+                    <div class="row row2"> <img src="" alt="" id="dia2icon" class="icon-weather">
                     </div>
-                    <div class="row row3" id="dia1"></div>
-                    <div class="row maxvalue" id="dia1max"></div>
-                    <div class="row minvalue" id="dia1min"></div>
+                    <div class="row row3" id="dia2name"></div>
+                    <div class="row maxvalue" id="dia2max"></div>
+                    <div class="row minvalue" id="dia2min"></div>
                 </div>
                 <div class="col">
-                    <div class="row row1 diatemp3">&deg;</div>
-                    <div class="row row2"><img class="img-fluid"
-                            src="https://img.icons8.com/windows/100/000000/cloud.png" /></div>
-                    <div class="row row3" id="dia1"></div>
-                    <div class="row maxvalue" id="dia1max"></div>
-                    <div class="row minvalue" id="dia1min"></div>
+                    <div class="row row1 " id="dia3data"></div>
+                    <div class="row row2"> <img src="" alt="" id="dia3icon" class="icon-weather"></div>
+                    <div class="row row3" id="dia3name"></div>
+                    <div class="row maxvalue" id="dia3max"></div>
+                    <div class="row minvalue" id="dia3min"></div>
                 </div>
                 <div class="col">
-                    <div class="row row1">17&deg;</div>
-                    <div class="row row2"><img class="img-fluid"
-                            src="https://img.icons8.com/windows/100/000000/cloud.png" /></div>
-                    <div class="row row3" id="dia1"></div>
-                    <div class="row maxvalue" id="dia1max"></div>
-                    <div class="row minvalue" id="dia1min"></div>
+                    <div class="row row1 " id="dia4data"></div>
+                    <div class="row row2"> <img src="" alt="" id="dia4icon" class="icon-weather"></div>
+                    <div class="row row3" id="dia4name"></div>
+                    <div class="row maxvalue" id="dia4max"></div>
+                    <div class="row minvalue" id="dia4min"></div>
 
 
                 </div>
                 <div class="col">
-                    <div class="row row1">18&deg;</div>
-                    <div class="row row2"><img class="img-fluid"
-                            src="https://img.icons8.com/cotton/64/000000/rain--v3.png" /></div>
-                    <div class="row row3" id="dia1"></div>
-                    <div class="row maxvalue" id="dia1max"></div>
-                    <div class="row minvalue" id="dia1min"></div>
+                    <div class="row row1" id="dia5data"></div>
+                    <div class="row row2"> <img src="" alt="" id="dia5icon" class="icon-weather"></div>
+                    <div class="row row3" id="dia5name"></div>
+                    <div class="row maxvalue" id="dia5max"></div>
+                    <div class="row minvalue" id="dia5min"></div>
                 </div>
             </div>
 
@@ -120,60 +121,54 @@
 
             <div class="row">
                 <div class="col">
-                    <div class="row row1">21&deg;</div>
-                    <div class="row row2"><img class="img-fluid" src="https://img.icons8.com/ios/100/000000/sun.png" />
+                    <div class="row row1" id="hora1temp"></div>
+                    <div class="row row2"><img src="" alt="" id="hora1icon" class="icon-weather-hora">
                     </div>
-                    <div class="row row3">12:00</div>
-                    <div class="row row4">PM</div>
+                    <div class="row row3" id="hora1"></div>
+                    
                 </div>
                 <div class="col">
-                    <div class="row row1">20&deg;</div>
-                    <div class="row row2"><img class="img-fluid" src="https://img.icons8.com/ios/100/000000/sun.png" />
+                    <div class="row row1" id="hora2temp"></div>
+                    <div class="row row2"><img src="" alt="" id="hora2icon" class="icon-weather-hora">
                     </div>
-                    <div class="row row3">1:00</div>
-                    <div class="row row4">PM</div>
+                    <div class="row row3" id="hora2"></div>
+                    
                 </div>
                 <div class="col">
-                    <div class="row row1">20&deg;</div>
-                    <div class="row row2"><img class="img-fluid"
-                            src="https://img.icons8.com/windows/100/000000/cloud.png" /></div>
-                    <div class="row row3">2:00</div>
-                    <div class="row row4">PM</div>
+                    <div class="row row1" id="hora3temp"></div>
+                    <div class="row row2"><img src="" alt="" id="hora3icon" class="icon-weather-hora"></div>
+                    <div class="row row3" id="hora3"></div>
+                    
                 </div>
                 <div class="col">
-                    <div class="row row1">19&deg;</div>
-                    <div class="row row2"><img class="img-fluid"
-                            src="https://img.icons8.com/windows/100/000000/cloud.png" /></div>
-                    <div class="row row3">3:00</div>
-                    <div class="row row4">PM</div>
+                    <div class="row row1" id="hora4temp"></div>
+                    <div class="row row2"><img src="" alt="" id="hora4icon" class="icon-weather-hora"></div>
+                    <div class="row row3" id="hora4"></div>
+                    
                 </div>
                 <div class="col">
-                    <div class="row row1">18&deg;</div>
-                    <div class="row row2"><img class="img-fluid"
-                            src="https://img.icons8.com/cotton/64/000000/rain--v3.png" /></div>
-                    <div class="row row3">4:00</div>
-                    <div class="row row4">PM</div>
+                    <div class="row row1" id="hora5temp"></div>
+                    <div class="row row2"><img src="" alt="" id="hora5icon" class="icon-weather-hora"></div>
+                    <div class="row row3" id="hora5"></div>
+                    
                 </div>
                 <div class="col">
-                    <div class="row row1">18&deg;</div>
-                    <div class="row row2"><img class="img-fluid"
-                            src="https://img.icons8.com/cotton/64/000000/rain--v3.png" /></div>
-                    <div class="row row3">4:00</div>
-                    <div class="row row4">PM</div>
+                    <div class="row row1" id="hora6temp"></div>
+                    <div class="row row2"><img src="" alt="" id="hora6icon" class="icon-weather-hora"></div>
+                    <div class="row row3" id="hora6"></div>
+                    
                 </div>
                 <div class="col">
-                    <div class="row row1">18&deg;</div>
-                    <div class="row row2"><img class="img-fluid"
-                            src="https://img.icons8.com/cotton/64/000000/rain--v3.png" /></div>
-                    <div class="row row3">4:00</div>
-                    <div class="row row4">PM</div>
+                    <div class="row row1" id="hora7temp"></div>
+                    <div class="row row2"><img src="" alt="" id="hora7icon" class="icon-weather-hora"></div>
+                    <div class="row row3" id="hora7"></div>
+                    
                 </div>
                 <div class="col">
-                    <div class="row row1">18&deg;</div>
-                    <div class="row row2"><img class="img-fluid"
-                            src="https://img.icons8.com/cotton/64/000000/rain--v3.png" /></div>
-                    <div class="row row3">4:00</div>
-                    <div class="row row4">PM</div>
+                    <div class="row row1" id="hora8temp"></div>
+                    <div class="row row2"><img src="" alt="" id="hora8icon" class="icon-weather-hora"></div>
+                    <div class="row row3" id="hora8"></div>
+                    
                 </div>
             </div>
 
@@ -193,8 +188,10 @@
     </footer>
     <!-- footer ends -->
     <!-- All Js -->
+    
     <script src="../js/bootstrap.bundle.min.js"></script>
-    <script src="../js/script.js"></script>
+    
+    <script src="../js/forecast.js"></script>
 </body>
 
 </html>

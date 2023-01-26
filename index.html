@@ -27,23 +27,21 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <!-- <div class="box">
-
-                <button id="search">
-                    <i class="bi bi-search" aria-hidden="true"></i>
-              </button>
-                
-            
-                <input type="text" name="">
-            
-            </div>  -->
-            <div class="form">
+          
+            <!-- <div class="form">
                 
                 <input type="text" placeholder="Digite o nome da cidade" id="city-input" />
                 <a href="pages/about.html" id="search">
                     <i class="bi bi-search" aria-hidden="true"></i>
                 </a>
-            </div>
+            </div> -->
+            <form class="d-flex">
+                <input class="form-control me-2" type="text" placeholder="Digite o nome da cidade" id="city-input">
+                
+                <button class="btn btn-outline-success bi bi-search" type="submit" id="search"><a href="pages/about.html" >
+                    
+                </a></button>
+              </form>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -218,7 +216,8 @@
     <!-- All Js -->
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
+    
+    <script src="js/index.js"></script>
     
 
 </body>

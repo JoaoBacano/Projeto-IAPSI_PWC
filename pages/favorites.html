@@ -24,13 +24,15 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="form">
+            
                 
-              <input type="text" placeholder="Digite o nome da cidade" id="city-input" />
-              <a href="pages/about.html" id="search">
-                  <i class="bi bi-search" aria-hidden="true"></i>
-              </a>
-          </div>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="text" placeholder="Digite o nome da cidade" id="city-input">
+                    
+                    <button class="btn btn-outline-success bi bi-search" type="submit" id="search" oncl><a href="pages/about.html" >
+                        
+                    </a></button>
+                  </form>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -40,7 +42,7 @@
                         <a class="nav-link" href="../pages/about.html">Detalhes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../pages/forecast.html">Forecast</a>
+                        <a class="nav-link" href="../pages/forecast.html" >Forecast</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="">Favoritos</a>
@@ -52,16 +54,7 @@
     </nav>
 
     <div class="container favorits-body">
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-              <div class="card">
-                <img src="" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-              </div>
-            </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="cards">
             
           </div>
 
@@ -76,7 +69,7 @@
 
     <!-- All Js -->
     <script src="../js/bootstrap.bundle.min.js"></script>
-    <script src="../js/script.js"></script>
+    <script src="../js/favorites.js"></script>
 </body>
 
 </html>

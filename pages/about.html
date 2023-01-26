@@ -24,16 +24,13 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="form">
-                <a  id="search" >
-                <i class="bi bi-search" aria-hidden="true"></i>
-                </a>
-                <input
-                type="text"
-                placeholder="Digite o nome da cidade"
-                id="city-input"
-              />
-            </div> 
+            <form class="d-flex">
+                <input class="form-control me-2" type="text" placeholder="Digite o nome da cidade" id="city-input">
+                
+                <button class="btn btn-outline-success bi bi-search" type="submit" id="search"><a href="pages/about.html" >
+                    
+                </a></button>
+              </form>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -57,20 +54,24 @@
     <!-- about section starts -->
     <div class="container about-body">
         <div class="card card-1">
+            
             <div class="row">
                 <div class="col-6">
                     <div  class="temp"><span id="temperature"></span>ºC</div>
-                    <div class="location"><span id="city"></span>, <span id="country"> </span></div>
-                </div>
+                    <div class="location"><span id="city"></span>, <span id="country"> </span> </div>
+                    <div class="location"><span id="data"></span></div>
+                </div> 
+                
                 <div class="col-6 justify-content-right">
-                    <button id="btnfavorites" class="btn"><img src="" id="imgfavorites"alt=""> </button>
-                    <img class="img-fluid" src="https://img.icons8.com/ios/100/000000/sun.png">
+                   
+                    <img class="img-fluid" id="icon" src="">
                 </div>
             </div>
+            <button id="btnfavorites" class="btn btnaddfavorites"><img src="" id="imgfavorites"alt="" class="img-fluid"> </button>
         </div>
 
         <div class="card-2">
-            <div class="title">Meteorologia para hoje para Pombaline downtown, 11</div>
+            <div class="title">Informações Detalhadas sobre <span id="city-detalhes"></span></div>
 
             <div class="about-container d-flex justify-content-between bd-highlight mb-3" >
                 <div class="justify-content-start">
@@ -198,7 +199,7 @@
 
     <!-- All Js -->
     <script src="../js/bootstrap.bundle.min.js"></script>
-    <script src="../js/script.js"></script>
+    <script src="../js/about.js"></script>
 </body>
 
 </html>

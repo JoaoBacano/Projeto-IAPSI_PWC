@@ -25,7 +25,7 @@ const moonElement = document.querySelector("#moon");
 const btnFavorites = document.querySelector("#btnfavorites");
 const imgFavorites = document.querySelector("#imgfavorites");
 
-var adicionarcard = document.querySelector(".row");
+var adicionarcard = document.querySelector("#cards");
 
 console.log(localStorage.getItem("city"));
 
@@ -92,10 +92,7 @@ const showWeatherDataIndex = async (city) => {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-
   var favorites = localStorage.getItem("favorites");
-  
-  
   const link = window.location.href;
 
   if (link.includes("index.html")) {
@@ -111,19 +108,19 @@ document.addEventListener('DOMContentLoaded', () => {
     
     var city = localStorage.getItem("city");
     var nome = cityElement.innerHTML;
-    getinfo(city);
+    showWeatherDataForeCast(city) ;
 
   } else if (link.includes("favorites.html")) {
     
     cardfavorito(favorites);
   }
 
-  if (favorites.includes(nome)) {
+  // if (favorites.includes(nome)) {
     
-    imgFavorites.src = '../icons/starfavorites.png';
-  } else {
-    imgFavorites.src = '../icons/starnofavorites.png';
-  }
+  //   imgFavorites.src = '../icons/starfavorites.png';
+  // } else {
+  //   imgFavorites.src = '../icons/starnofavorites.png';
+  // }
 });
 
 if (myCarousel != null) {
@@ -150,12 +147,17 @@ if (myCarousel != null) {
   });
 }
 
-function getinfo(city) {
+function showWeatherDataForeCast(city) {
 
   fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`)
     .then(response => response.json())
     .then(data => {
 
+
+      // for (i = 0; i < 5; i++) {
+      //   document.getElementById("dia" + (i + 1)).innerHTML = getFormattedDate(data.list[i].dt).substring(0,3);
+        
+      // }
       //Getting the min and max values for each day
       for (i = 0; i < 5; i++) {
         document.getElementById("dia" + (i + 1) + "min").innerHTML = "Min: " + parseInt(data.list[i].main.temp_min - 273.15) + "°";
@@ -163,7 +165,7 @@ function getinfo(city) {
       }
 
       for (i = 0; i < 5; i++) {
-        document.getElementById("dia" + (i + 1) + "max").innerHTML = "Max: " + Number(data.list[i].main.temp_max - 273.15).toFixed(2) + "°";
+        document.getElementById("dia" + (i + 1) + "max").innerHTML = "Max: " + parseInt(data.list[i].main.temp_max - 273.15) + "°";
       }
       //------------------------------------------------------------
 
@@ -197,12 +199,17 @@ if(btnFavorites != null){
     imgFavorites.src = '../icons/starfavorites.png';
     localStorage.setItem("favorites", JSON.stringify(favorites));
   }
-  
+  favorites.stores.push(nome);
+  localStorage.setItem("favorites", JSON.stringify(favorites));
   
 
 });
 }
 
+function getFormattedDate(date){
+  var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  return new Date(date * 1000).toLocaleDateString("pt-PT",options);
+}
 
 function cardfavorito(favorites){
   for (let index = 0; index < 3; index++) {
