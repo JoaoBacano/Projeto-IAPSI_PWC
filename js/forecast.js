@@ -12,6 +12,7 @@ const iconElement = document.querySelector("#icon");
 const btnFavorites = document.querySelector("#btnfavorites");
 const imgFavorites = document.querySelector("#imgfavorites");
 
+//Pega os dados do weather da API de acordo com a cidade enviada
 const getWeatherData = async (city) => {
 
   const apiWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=pt_br`;
@@ -22,7 +23,7 @@ const getWeatherData = async (city) => {
   console.log(data);
   return data;
 };
-
+//Pega os dados do forecast da API de acordo com a cidade enviada
 const getWeatherForecast = async (city) => {
 
   const apiWeatherForecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}&lang=pt_br`;
@@ -37,13 +38,15 @@ const getWeatherForecast = async (city) => {
   return data;
 
 }
+//Evento para quando clica no searchBtn guardar a cidade inserida no localstorage city
 searchBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
   localStorage.setItem('city', cityInput.value);
-
+  location.reload();
 });
 
+//mostra os dados 3h do array forecast mas só mostra o numero limitado de espaço do html
 function hourForeCast(forecast) {
 
   for (var i = 0; i < forecast.list.length; i++) {
@@ -57,17 +60,9 @@ function hourForeCast(forecast) {
 
   }
 
-  /*  for (i = 0; i < 5; i++) {
-     document.getElementById("dia" + (i + 1) + "icon").src = "http://openweathermap.org/img/w/" +
-       forecast.list[i].weather[0].icon
-       + ".png";
-   } */
-
-  console.log(data)
-
-
 }
 
+//mostra os dados de cada dia do array forecast passando o array de 8 em 8 elementos pois isso seria um dia(3x8=24).
 function dayForecast(forecast) {
 
   for (var i = 7, j = 1; i < forecast.list.length; i += 8, j++) {
@@ -82,6 +77,7 @@ function dayForecast(forecast) {
 
   }
 }
+//mostra os dados da cidade
 const showWeatherData = async (city) => {
 
   const data = await getWeatherData(city);
@@ -95,18 +91,17 @@ const showWeatherData = async (city) => {
 
 };
 
-
+//formata a data
 function getFormattedDate(date) {
   var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
   return new Date(date * 1000).toLocaleDateString("pt-PT", options);
 }
 
+//quando clicar no btnFavorites adiciona o nome da cidade ao localstorage favorites
 btnFavorites.addEventListener('click', () => {
 
   var nome = cityElement.innerHTML.toUpperCase();
   var favorites = JSON.parse(localStorage.getItem("favorites"));
-
-
 
   if (!favorites.stores.includes(nome)) {
     console.log("teste");
@@ -118,6 +113,7 @@ btnFavorites.addEventListener('click', () => {
 
 });
 
+//evento para quando da load da pagina mostrar os dados da cidade inserida, mas se não tiver inserido vai mostrar a cidade Caldas da Rainha.
 document.addEventListener('DOMContentLoaded', () => {
 
   var favorites = JSON.parse(localStorage.getItem("favorites"));
@@ -135,14 +131,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   city = localStorage.getItem('city');
 
-  console.log(city);
-  console.log(favorites);
+  
   if (favorites === null) {
     localStorage.setItem("favorites", JSON.stringify({ stores: [] }));
-    console.log(favorites);
+    
     imgFavorites.src = '../icons/starnofavorites.png';
   } else {
-    console.log(favorites.stores);
+    
     city = city.toUpperCase();
     //favorites.toUpperCase();
     if (favorites.stores.includes(city)) {

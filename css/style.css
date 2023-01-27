@@ -412,15 +412,20 @@ body {
 	
 	width: 75px;
 	height: 50px;
-	position: static;
-	margin-right: 50px;
-	margin-top: 10px;
+	position: absolute;
+	margin-top: -10px;
+	margin-left: 150px;
+	background-color: transparent;
+	border: 1px solid transparent;
 }
-.btnaddfavorites .img-fluid{
-	width: 75px;
+
+.endireitar{
+	margin-right: 250px;
+}
+
+.img-favorite{
+	width: 65px;
 	height: 50px;
-	
-	
 }
 /* End about */
 /*Favorits*/

@@ -7,6 +7,7 @@ const tempElement = document.querySelector("#temperature");
 const humidityElement = document.querySelector("#humidity");
 const windElement = document.querySelector("#wind");
 
+//Pega os dados do weather da API de acordo com a cidade enviada
 const getWeatherData = async (city) => {
 
     const apiWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=pt_br`;
@@ -17,7 +18,7 @@ const getWeatherData = async (city) => {
     console.log(data);
     return data;
 };
-
+//Evento para quando clica no searchBtn guardar a cidade inserida no localstorage city e a pagina about é aberta
 searchBtn.addEventListener("click", (e) => {
     e.preventDefault();
 
@@ -25,6 +26,7 @@ searchBtn.addEventListener("click", (e) => {
     window.location.replace("pages/about.html");
 });
 
+//mostra os dados da cidade
 const showWeatherDataIndex = async (city) => {
 
     const data = await getWeatherData(city);
@@ -35,11 +37,13 @@ const showWeatherDataIndex = async (city) => {
 
 };
 
+//evento para quando da load aperece logo os dados de dubai
 document.addEventListener('DOMContentLoaded', () => {
 
     showWeatherDataIndex(`Dubai`);
 });
 
+//toda vez que o carousel roda os dados mudam de acordo com a cidade correspondente
 myCarousel.addEventListener("slide.bs.carousel", () => {
 
     

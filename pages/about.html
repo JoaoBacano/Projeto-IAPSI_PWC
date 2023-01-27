@@ -18,7 +18,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="../index.html"><span class="text-warning">Open</span>Weather</a>
+            <a class="navbar-brand" href="../index.html"><span class="text-warning">Bacano</span>Weather</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -67,7 +67,7 @@
                     <img class="img-fluid" id="icon" src="">
                 </div>
             </div>
-            <button id="btnfavorites" class="btn btnaddfavorites"><img src="" id="imgfavorites"alt="" class="img-fluid"> </button>
+            <button id="btnfavorites" class="btnaddfavorites"><img src="" id="imgfavorites"alt="" class="img-favorite"> </button>
         </div>
 
         <div class="card-2">
@@ -115,10 +115,10 @@
                     </div>
                     <div class="list-item">
                         <div class="icon">
-                            <img class="img-fluid" src="../icons/visibility.png" alt="">
+                            
                         </div>
                         <div class="label">
-                            Visibilidade
+                            
                         </div>
                         <div class="data">
                             <span id="visibility"></span>
@@ -127,7 +127,7 @@
                     </div>
                 </div>
 
-                <div class="justify-content-end">
+                <div class="endireitar">
                     <div class="list-item">
                         <div class="icon">
                             <img class="img-fluid" src="../icons/wind.png" alt="">
@@ -143,26 +143,26 @@
 
                     <div class="list-item">
                         <div class="icon">
-
+                            <img class="img-fluid" src="../icons/icons8-location-96.png" alt="">
                         </div>
                         <div class="label">
-                            Humidade
+                            Cordenadas
                         </div>
                         <div class="data">
-                            54%
+                            <span id="long"></span>/<span id="lat"></span>
                         </div>
 
                     </div>
 
                     <div class="list-item">
                         <div class="icon">
-
+                            <img class="img-fluid" src="../icons/icons8-clouds-96.png" alt="">
                         </div>
                         <div class="label">
-                            Índice de UV
+                            Nuvens
                         </div>
                         <div class="data">
-                            <span id="uv"></span>de 10
+                            <span id="nuvens"></span>
                         </div>
 
                     </div>
@@ -171,7 +171,7 @@
 
                         </div>
                         <div class="label">
-                            Fase da lua
+                            
                         </div>
                         <div class="data">
                             <span id="moon"></span>
@@ -181,24 +181,14 @@
                 </div>
 
             </div>
-            <!-- <ul class="list-group list-group-flush about-container">
-                <div class="esquerda"> <li class="list-group-item list-item"><div class="icon"></div><div class="label">Alto/Baixo</div><div class="data">24ºC</div></li>
-                <li class="list-group-item list-item"><div class="icon"></div><div class="label">Alto/Baixo</div><div class="data">24ºC</div></li>
-                <li class="list-group-item list-item"><div class="icon"></div><div class="label">Alto/Baixo</div><div class="data">24ºC</div></li>
-                <li class="list-group-item list-item"><div class="icon"></div><div class="label">Alto/Baixo</div><div class="data">24ºC</div></li></div>
-               
-                <div class="direita"> <li class="list-group-item list-item "><div class="icon"></div><div class="label">Alto/Baixo</div><div class="data">24ºC</div></li>
-                <li class="list-group-item list-item "><div class="icon"></div><div class="label">Alto/Baixo</div><div class="data">24ºC</div></li>
-                <li class="list-group-item list-item "><div class="icon"></div><div class="label">Alto/Baixo</div><div class="data">24ºC</div></li>
-                <li class="list-group-item list-item "><div class="icon"></div><div class="label">Alto/Baixo</div><div class="data">24ºC</div></li></div>
-               
-              </ul> -->
+          
         </div>
     </div>
     <!-- about section Ends -->
 
     <!-- All Js -->
     <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script src="../js/about.js"></script>
 </body>
 
